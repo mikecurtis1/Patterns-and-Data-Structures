@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="upstate.xsl"?>
 <mets:mets
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:mets="http://www.loc.gov/METS/"
-	xmlns:upstate="http://www.example.net/upstate"
-	xmlns:mods="http://www.loc.gov/mods/v3"
-	xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd">
-	
-	<mets:metsHdr
-		CREATEDATE="2015-11-09T16:44:47+01:00"
-		LASTMODDATE="2015-11-09T16:44:47+01:00"
-		RECORDSTATUS="NEW">
-		<mets:agent ROLE="EDITOR" TYPE="ORGANIZATION">
-			<mets:name>SUNY Upstate Medical University</mets:name>
-		</mets:agent>
-	</mets:metsHdr>
-	
-	<mets:dmdSec ID="dmd1">
-		<mets:mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="DC">
-			<mets:xmlData>
-				<dc:identifier>150</dc:identifier>
-				<dc:title>&quot;Dr. Carlyle Jacobsen, Executive Dean&quot; article from the Alumni Bulletin of Long Island College of Medicine</dc:title>
-				<dc:date>0000-00-00 / 0000-00-00</dc:date>
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:mets="http://www.loc.gov/METS/"
+  xmlns:upstate="http://www.example.net/upstate"
+  xmlns:mods="http://www.loc.gov/mods/v3"
+  xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd">
+  
+  <mets:metsHdr
+    CREATEDATE="2015-11-09T16:44:47+01:00"
+    LASTMODDATE="2015-11-09T16:44:47+01:00"
+    RECORDSTATUS="NEW">
+    <mets:agent ROLE="EDITOR" TYPE="ORGANIZATION">
+      <mets:name>SUNY Upstate Medical University</mets:name>
+    </mets:agent>
+  </mets:metsHdr>
+  
+  <mets:dmdSec ID="dmd1">
+    <mets:mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="DC">
+      <mets:xmlData>
+        <dc:identifier>150</dc:identifier>
+        <dc:title>&quot;Dr. Carlyle Jacobsen, Executive Dean&quot; article from the Alumni Bulletin of Long Island College of Medicine</dc:title>
+        <dc:date>0000-00-00 / 0000-00-00</dc:date>
         <dc:subject>Long Island College of Medicine</dc:subject>
         <dc:subject>State University of New York</dc:subject>
         <dc:subject>Medical education. </dc:subject>
         <dc:type>B&amp;W Document</dc:type>
         <dc:language>English</dc:language>
-				<dc:description>appointed Executive Dean for Medical Education for SUNY</dc:description>
-			</mets:xmlData>
-		</mets:mdWrap>
-	</mets:dmdSec>
-	
-	<mets:dmdSec ID="dmd2">
-		<mets:mdWrap MIMETYPE="text/xml" MDTYPE="MODS">
-			<mets:xmlData>
-				<mods:titleInfo>
-					<mods:title>&quot;Dr. Carlyle Jacobsen, Executive Dean&quot; article from the Alumni Bulletin of Long Island College of Medicine</mods:title>					
+        <dc:description>appointed Executive Dean for Medical Education for SUNY</dc:description>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  
+  <mets:dmdSec ID="dmd2">
+    <mets:mdWrap MIMETYPE="text/xml" MDTYPE="MODS">
+      <mets:xmlData>
+        <mods:titleInfo>
+          <mods:title>&quot;Dr. Carlyle Jacobsen, Executive Dean&quot; article from the Alumni Bulletin of Long Island College of Medicine</mods:title>          
           <originInfo>
             <dateCaptured point="start" encoding="iso8601">0000-00-00</dateCaptured>
             <dateCaptured point="end" encoding="iso8601">0000-00-00</dateCaptured>
@@ -47,33 +47,33 @@
           <mods:subject authority="LCSH">Long Island College of Medicine</mods:subject>
           <mods:subject authority="LCSH">State University of New York</mods:subject>
           <mods:subject authority="LCSH">Medical education. </mods:subject>
-					<mods:physicalDescription>B&amp;W Document</mods:physicalDescription>
+          <mods:physicalDescription>B&amp;W Document</mods:physicalDescription>
         </mods:titleInfo>
-			</mets:xmlData>
-		</mets:mdWrap>
-	</mets:dmdSec>
-	
-	<mets:dmdSec ID="dmd3">
-		<mets:mdWrap MIMETYPE="text/xml"  MDTYPE="OTHER">
-			<mets:xmlData>
-				<upstate:object>
-					<upstate:id>150</upstate:id>					
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  
+  <mets:dmdSec ID="dmd3">
+    <mets:mdWrap MIMETYPE="text/xml"  MDTYPE="OTHER">
+      <mets:xmlData>
+        <upstate:object>
+          <upstate:id>150</upstate:id>          
           <upstate:internalId>2015.0140</upstate:internalId>
-					<upstate:title>"Dr. Carlyle Jacobsen, Executive Dean" article from the Alumni Bulletin of Long Island College of Medicine</upstate:title>
-					<upstate:type>B&amp;W Document</upstate:type>
-					<upstate:subject thesaurus="LCSH">Long Island College of Medicine</upstate:subject>
+          <upstate:title>"Dr. Carlyle Jacobsen, Executive Dean" article from the Alumni Bulletin of Long Island College of Medicine</upstate:title>
+          <upstate:type>B&amp;W Document</upstate:type>
+          <upstate:subject thesaurus="LCSH">Long Island College of Medicine</upstate:subject>
           <upstate:subject thesaurus="LCSH">State University of New York</upstate:subject>
           <upstate:subject thesaurus="LCSH">Medical education. </upstate:subject>
-					<upstate:keywords thesaurus="LCSH"></upstate:keywords>
-					<upstate:date start="0000-00-00" end="0000-00-00">0000-00-00 / 0000-00-00</upstate:date>
+          <upstate:keywords thesaurus="LCSH"></upstate:keywords>
+          <upstate:date start="0000-00-00" end="0000-00-00">0000-00-00 / 0000-00-00</upstate:date>
           <upstate:language>English</upstate:language>
-					<upstate:notes>1 page</upstate:notes>
+          <upstate:notes>1 page</upstate:notes>
         </upstate:object>
-			</mets:xmlData>
-		</mets:mdWrap>
-	</mets:dmdSec>
-	
-	<mets:amdSec>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  
+  <mets:amdSec>
     <mets:techMD ID="ADM1">
       <mets:mdWrap MDTYPE="OTHER">
         <mets:xmlData>
@@ -85,19 +85,19 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-	</mets:amdSec>
-	
-	<mets:fileSec>
-		<mets:fileGrp USE="image/thumbnail">
-			<mets:file ID="FID1" GROUPID="GID1" SIZE="[image:size]" MIMETYPE="image/png">
-				<mets:FLocat LOCTYPE="URL" xlink:href="http://hsl.upstate.edu/mets/thumbnail/2015/2015.0140.png" xlink:role="thumbnail" admid="ADM1" />
-			</mets:file>
-		</mets:fileGrp>
-		<mets:fileGrp USE="image/reference">
-			<mets:file ID="FID2" GROUPID="GID1" SIZE="[image:size]" MIMETYPE="application/pdf">
-				<mets:FLocat LOCTYPE="URL" xlink:href="http://hsl.upstate.edu/mets/reference/2015/2015.0140.pdf" xlink:role="access" admid="ADM1" />
-			</mets:file>
-		</mets:fileGrp>
-	</mets:fileSec>
-	
+  </mets:amdSec>
+  
+  <mets:fileSec>
+    <mets:fileGrp USE="image/thumbnail">
+      <mets:file ID="FID1" GROUPID="GID1" SIZE="[image:size]" MIMETYPE="image/png">
+        <mets:FLocat LOCTYPE="URL" xlink:href="http://hsl.upstate.edu/mets/thumbnail/2015/2015.0140.png" xlink:role="thumbnail" admid="ADM1" />
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID2" GROUPID="GID1" SIZE="[image:size]" MIMETYPE="application/pdf">
+        <mets:FLocat LOCTYPE="URL" xlink:href="http://hsl.upstate.edu/mets/reference/2015/2015.0140.pdf" xlink:role="access" admid="ADM1" />
+      </mets:file>
+    </mets:fileGrp>
+  </mets:fileSec>
+  
 </mets:mets>
