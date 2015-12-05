@@ -1,0 +1,115 @@
+html { 
+    height: 100%;
+    background: url(crepuscule.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    color: #f3f0e2;
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+h2 {
+    margin-left:0.5em;
+}
+
+div.main a, div.main a:hover, div.main a:visited {
+    color: #f3f0e2;
+    text-decoration: none;
+}
+
+div.main {
+    min-height: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    width:42em;
+    padding:1em;
+    margin-bottom:3em;
+}
+
+div.main ul {
+    list-style-type: none;
+}
+
+div.main ul li:before {
+    content: "\0000BB\0020";
+}
+
+div.main ul li {
+    font-family: "Raleway", serif;
+    font-weight: 500;
+    margin: 0.5em 0 0.5em 0;
+}
+
+div.bottom {
+    font-family: "Alice", serif;
+    background-color:#111;
+    color:#ccc;
+    /*position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;*/
+    padding: 2em 3em;
+}
+
+div.bottom ul {
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+div.bottom ul li {
+    list-style-type: none;
+    margin:0 0 0.5em 0;
+    padding:0;
+    border:0;
+}
+
+div.bottom div.left {
+    float:left;
+    white-space: nowrap;
+}
+
+div.bottom div.right {
+    float:right;
+}
+
+div.bottom img.mail {
+    width: 2em;
+    margin:0 0.5em 0 0;
+    position:relative;
+    top:0.75em;
+}
+
+img.linkedin {
+    width: 2em;
+    margin-right:1em;
+    position:relative;
+    top:0.75em;
+}
+
+img.github {
+    width: 2em;
+    margin-right:1em;
+    position:relative;
+    top:0.75em;
+}
+
+.clear {
+    clear:both;
+}
+
+div.bottom a, div.bottom a:visited, div.bottom a:hover {
+    color:#aaa;
+}
+    
