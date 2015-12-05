@@ -11,21 +11,21 @@ div {
 }
 
 div.dc {
-  border: 0.25em solid #eea;
+  border: 0.75em solid #eea;
 }
 
 div.mods {
-  border: 0.25em solid #aea;
+  border: 0.75em solid #aea;
 }
 
 div.upstate_object {
-  border: 0.25em solid #aae;
+  border: 0.75em solid #aae;
 }
 
 div.upstate_image {
-  border: 0.25em solid #eaa;
+  border: 0.75em solid #eaa;
 }
 
 div.file_sec {
-  border: 0.25em solid #aee;
+  border: 0.75em solid #aee;
 }
