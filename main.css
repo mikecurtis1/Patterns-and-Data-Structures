@@ -1,5 +1,6 @@
 html { 
     height: 100%;
+    width: 100%;
     background: url(crepuscule.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -30,10 +31,11 @@ div.main a, div.main a:hover, div.main a:visited {
 }
 
 div.main {
-    min-height: 100%;
+    /*
     margin-left:auto;
     margin-right:auto;
     width:42em;
+    */
     padding:1em;
     margin-bottom:3em;
 }
@@ -56,10 +58,12 @@ div.bottom {
     font-family: "Alice", serif;
     background-color:#111;
     color:#ccc;
-    /*position: absolute;
+    /*
+    position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;*/
+    width: 100%;
+    */
     padding: 2em 3em;
 }
 
