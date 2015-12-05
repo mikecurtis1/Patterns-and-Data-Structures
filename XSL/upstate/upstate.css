@@ -6,28 +6,33 @@ div.dc {
   margin:2em;
   border: 0.25em solid #eea;
   padding:2em;
+  border-radius: 1.5em;
 }
 
 div.mods {
   margin:2em;
   border: 0.25em solid #aea;
   padding:2em;
+  border-radius: 1.5em;
 }
 
 div.upstate_object {
   margin:2em;
   border: 0.25em solid #aae;
   padding:2em;
+  border-radius: 1.5em;
 }
 
 div.upstate_image {
   margin:2em;
   border: 0.25em solid #eaa;
   padding:2em;
+  border-radius: 1.5em;
 }
 
 div.file_sec {
   margin:2em;
   border: 0.25em solid #aee;
   padding:2em;
+  border-radius: 1.5em;
 }
