@@ -9,12 +9,12 @@
 
 document {
     display: block;
-    width: 36em;
+    width: 100%;
 }
 
 sonnet {
     display: block;
-    width: 36em;
+    width: 100%;
     background-color:#ddc;
     padding-top: 10px;
     padding-bottom: 10px;
