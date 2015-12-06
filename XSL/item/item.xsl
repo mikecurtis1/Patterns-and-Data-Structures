@@ -6,11 +6,20 @@
     <head>
       <title>Aleph OPAC Item</title>
       <link rel="stylesheet" type="text/css" href="item.css" media="screen" />
+      <link 
+        rel="stylesheet" 
+        type="text/css" 
+        href="http://fonts.googleapis.com/css?family=Merriweather" />
     </head>
     <body>
     <div class="main">
     <h1><xsl:value-of select="//varfield[@id='245']"/></h1>
     <table>
+      <tr>
+        <th class="fieldtype">Type</th>
+        <th class="marc_tag">Code</th>
+        <th class="data">Data</th>
+      </tr>
       <xsl:for-each select="//record/metadata/oai_marc/*">
         <xsl:choose>
           <xsl:when test="name(.)='fixfield'">
@@ -19,6 +28,7 @@
                 <xsl:value-of select="name(.)"/>
               </td>
               <td class="marc_tag">
+                
                 <xsl:value-of select="@id"/>
               </td>
               <td class="data">
