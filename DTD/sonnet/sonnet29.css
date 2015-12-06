@@ -1,5 +1,5 @@
 @viewport {
-  width: 36em;
+  width: device-width;
   initial-scale: 1;
   zoom: 1;
   min-zoom: 1;
