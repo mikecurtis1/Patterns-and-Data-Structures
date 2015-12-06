@@ -25,6 +25,25 @@ h2 {
     margin-left:0.5em;
 }
 
+p {
+    font-family: "Raleway", serif;
+    font-size:0.8em;
+    line-height:1.5em;
+    max-width: 36em;
+    margin-left:1.5em;
+}
+
+div.main p a, div.main p a:visited {
+    color:#f3f0e2;
+    text-decoration: underline;
+}
+
+div.main p a:hover {
+    color:#fff;
+    background-color: rgba(255,255,255,0.3);
+    text-decoration: underline;
+}
+
 div.main a:hover {
     color:#fff;
     background-color: rgba(255,255,255,0.3);
