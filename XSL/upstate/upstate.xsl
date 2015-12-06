@@ -19,6 +19,7 @@
       <link rel="stylesheet" type="text/css" href="upstate.css" media="screen" />
     </head>
     <body>
+      <h1>Sample METS record</h1>
       <xsl:apply-templates/>
     </body>
   </html>

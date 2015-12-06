@@ -3,6 +3,12 @@ body {
   font-family:Verdana, sans-serif;
 }
 
+h1 {
+  font-weight:normal;
+  font-size:175%;
+  margin: 1em;
+}
+
 div {
   background-color: #fff;
   margin:2em;
