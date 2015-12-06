@@ -14,8 +14,7 @@ document {
 
 sonnet {
     display: block;
-    white-space: nowrap;
-    width: 100%;
+    width: 36em;
     background-color:#ddc;
     padding-top: 10px;
     padding-bottom: 10px;
