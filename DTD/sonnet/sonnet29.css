@@ -9,7 +9,8 @@ document {
 sonnet {
     display: block;
     /*white-space: nowrap;*/
-    width: 32em;
+    width: 36em;
+    
     /*background-color:#ddc;*/
     padding-top: 10px;
     padding-bottom: 10px;
