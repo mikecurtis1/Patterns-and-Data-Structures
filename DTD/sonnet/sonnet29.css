@@ -10,9 +10,10 @@ document {
 
 sonnet {
     display: block;
-    width: 500px;
-    background-color:#eed;
+    width: 32em;
+    background-color:#ffd;
     padding: 1em;
+    margin: 1em;
     line-height: 1.5em;
 }
 
