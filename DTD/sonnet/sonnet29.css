@@ -1,5 +1,6 @@
 document {
     display: block;
+    white-space: nowrap;
 }
 
 sonnet {
