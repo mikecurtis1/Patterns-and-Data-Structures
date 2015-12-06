@@ -1,5 +1,5 @@
 @viewport {
-  width: device-width;
+  width: 36em;
   initial-scale: 1;
   zoom: 1;
   min-zoom: 1;
@@ -9,7 +9,7 @@
 
 document {
     display: block;
-    width:100%;
+    width: 36em;
 }
 
 sonnet {
