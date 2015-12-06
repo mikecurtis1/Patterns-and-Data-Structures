@@ -1,17 +1,16 @@
 @viewport {
   width: device-width;
-  initial-scale: 2;
+  initial-scale: 1;
 }
 
 document {
     display: block;
-    width: 100%;
 }
 
 sonnet {
     display: block;
-    width: 100%;
-    background-color:#eaeaca;
+    width:32em;
+    background-color:#ececcc;
     padding: 1em;
     margin: 1em;
     line-height: 1.5em;
