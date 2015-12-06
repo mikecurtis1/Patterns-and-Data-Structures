@@ -1,10 +1,10 @@
 document {
     display: block;
-    white-space: nowrap;
 }
 
 sonnet {
     display: block;
+    white-space: nowrap;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
