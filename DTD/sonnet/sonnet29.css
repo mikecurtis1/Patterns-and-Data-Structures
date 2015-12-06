@@ -5,6 +5,8 @@ document {
 sonnet {
     display: block;
     /*white-space: nowrap;*/
+    min-width: 32em;
+    /*background-color:#ddc;*/
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
