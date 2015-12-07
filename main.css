@@ -148,25 +148,25 @@ div.bottom div.left span.icon {
 
 img.linkedin {
     width: 2em;
-    margin-right:0;
+    margin-right:0.5em;
     position:relative;
 }
 
 img.github {
     width: 2em;
-    margin-right:0;
+    margin-right:0.5em;
     position:relative;
 }
 
 img.goodreads {
     width: 2em;
-    margin-right:0;
+    margin-right:0.5em;
     position:relative;
 }
 
 img.stackoverflow {
     width: 2em;
-    margin-right:0;
+    margin-right:0.5em;
     position:relative;
 }
 
