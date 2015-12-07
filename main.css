@@ -140,27 +140,33 @@ div.bottom div.left span.email a {
     top:-0.75em;
 }
 
+div.bottom div.left span.icon {
+    margin:0;
+    padding:0;
+    border:0;
+}
+
 img.linkedin {
     width: 2em;
-    margin-right:1em;
+    margin-right:0;
     position:relative;
 }
 
 img.github {
     width: 2em;
-    margin-right:1em;
+    margin-right:0;
     position:relative;
 }
 
 img.goodreads {
     width: 2em;
-    margin-right:1em;
+    margin-right:0;
     position:relative;
 }
 
 img.stackoverflow {
     width: 2em;
-    margin-right:1em;
+    margin-right:0;
     position:relative;
 }
 
