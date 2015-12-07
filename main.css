@@ -157,6 +157,12 @@ img.goodreads {
     position:relative;
 }
 
+img.stackoverflow {
+    width: 2em;
+    margin-right:1em;
+    position:relative;
+}
+
 .clear {
     clear:both;
 }
