@@ -60,12 +60,12 @@ div.content {
   font-family: 'Roboto Condensed', sans-serif;
   border:1px solid #888;
   position:relative;
-  top:-2.5em;
+  top:-1.5em;
   left:-50%;
   display:block;
   text-align:center;
   margin:0;
-  padding:2em 0 2em 0;
+  padding:1em 0 1em 0;
 }
 
 div.header {
