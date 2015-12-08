@@ -72,9 +72,7 @@ div.header {
   position: fixed;
   top:0;
   left:0;
-  color:#000;
-  background-color:#ccc;
-  opacity:0.5;
+  background-color: rgba(160, 160, 160, 0.15);
   width:100%;
   z-index:1;
   padding:1em 0 1em 0;
@@ -85,9 +83,7 @@ div.footer {
   position: fixed;
   bottom:0;
   left:0;
-  color:#ccc;
-  background-color:#000;
-  opacity:0.5;
+  background-color: rgba(0, 0, 0, 0.4);
   width:100%;
   z-index:1;
   padding:1em 0 1em 0;
@@ -100,7 +96,6 @@ div.header div.box{
   opacity:1;
   z-index:1;
   font-family: 'Raleway', sans-serif;
-  /*border:solid 1px #888;*/
   text-align:center;
   display:block;
 }
@@ -108,10 +103,9 @@ div.header div.box{
 div.footer div.box{
   float:left;
   width:25%;
-  opacity:1;
-  z-index:1;
   font-family: 'Raleway', sans-serif;
   overflow:hidden;
+  z-index:1;
 }
 
 div.header a, div.header a:hover, div.header a:visited {
