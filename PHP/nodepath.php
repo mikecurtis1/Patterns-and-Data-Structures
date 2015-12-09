@@ -66,6 +66,13 @@ class Node
         }
     }
     
+    /**
+     * Recursively inserts a path of nodes
+     * 
+     * @param Node $curr_node
+     * @param string $path a slash delimited path of node names
+     * @param Node|Member|null $arg the final node added at the end of the node path
+     * /
     public function insertByPath(&$curr_node, $path='', $arg=null)
     {
         if (is_string($path) && $this->insertable($arg)) {
@@ -121,7 +128,7 @@ class Node
 <pre>
 <?php 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z = Node::build('Z');
+$z = Node::build('Z'); // create root node
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
