@@ -72,7 +72,7 @@ class Node
      * @param Node $curr_node
      * @param string $path a slash delimited path of node names
      * @param Node|Member|null $arg the final node added at the end of the node path
-     * /
+     */
     public function insertByPath(&$curr_node, $path='', $arg=null)
     {
         if (is_string($path) && $this->insertable($arg)) {
