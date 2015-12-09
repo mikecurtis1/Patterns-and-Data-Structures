@@ -67,7 +67,7 @@ class Node
     }
     
     /**
-     * Recursively inserts a path of nodes
+     * Recursively inserts a set of nested nodes
      * 
      * @param Node $curr_node
      * @param string $path a slash delimited path of node names
