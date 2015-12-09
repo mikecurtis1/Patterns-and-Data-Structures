@@ -67,7 +67,7 @@ class Node
     }
     
     /**
-     * Recursively inserts a set of nested nodes
+     * Recursively inserts a path of nodes
      * 
      * @param Node $curr_node
      * @param string $path a slash delimited path of node names
@@ -127,36 +127,53 @@ class Node
 ?>
 <pre>
 <?php 
+
+//NOTE: https://en.wikipedia.org/wiki/Node_%28computer_science%29
+
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z = Node::build('Z'); // create root node
+// create root node
+$z = Node::build('Z');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
+// add a child to root
 $z->insertByPath($z, 'A');
-$z->insertByPath($z, 'B'); // will not insert node with duplicate name
+echo var_dump($z);
+
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
+// another child added... 
+$z->insertByPath($z, 'B');
+// ...but, will not insert node with duplicate name
 $z->insertByPath($z, 'B');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
+// insert a node at end of path
 $z->insertByPath($z, 'C', Node::build('D'));
-#$z->insertByPath($z, 'C/D'); // syntactic difference only
+// syntactically the same a above...
+// ...but, insert fails because of duplicate path
+$z->insertByPath($z, 'C/D');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z->insertByPath($z, 'E/F', Node::build('G'));
-$z->insertByPath($z, 'O/P/Q');
+// insert a deep node path
+$z->insertByPath($z, 'E/F/G/H/I');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z->insertByPath($z, 'H/I', Member::build('j', 'bar'));
+// child nodes (F/G/H/I) can be duplicated, 
+// because siblings (E,D) are different nodes
+$z->insertByPath($z, 'D/F/G/H/I');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z->insertByPath($z, 'K/I', 1); // will not insert node for non-insertable
+// insert a Member at end of path
+$z->insertByPath($z, 'K/L', Member::build('j', 'bar'));
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-$z->insertByPath($z, 'L/M', Member::build('n', 'baz'));
+// will not insert non-insertable
+$z->insertByPath($z, 'M/N', 1);
 echo var_dump($z);
 ?>
 </pre>
