@@ -161,8 +161,9 @@ $z->insertByPath($z, 'E/F/G/H/I');
 echo var_dump($z);
 
 echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// child nodes (F/G/H/I) can be duplicated, 
-// because siblings (E,D) are different nodes
+// child nodes (F/G/H/I) here and above can be duplicated, 
+// because siblings (E,D) are different nodes 
+// the two resulting paths are unique
 $z->insertByPath($z, 'D/F/G/H/I');
 echo var_dump($z);
 
