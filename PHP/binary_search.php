@@ -1,4 +1,9 @@
 <?php 
+/**
+ * simple iterative binary search based on the description at 
+ * https://en.wikipedia.org/wiki/Binary_search_algorithm#Iterative
+ * 
+ */
 
 class BinarySearch
 {
