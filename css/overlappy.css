@@ -12,20 +12,20 @@ div.main {
   border-radius: 1.25em 0 0 0;
   background: rgba(0, 0, 0, 0.05);
   padding:1em 0.75em 0.5em 2em;
-  width:36em;
+  max-width:36em;
   margin-bottom:1em;
 }
 
 div.section {
   background: rgba(0, 0, 0, 0.05);
-  width:36em;
+  max-width:36em;
   padding:1em 0.5em 0.5em 2em;
   margin-bottom:1em;
 }
 
 div.sub_section {
   background: rgba(0, 0, 0, 0.05);
-  width:36em;
+  max-width:36em;
   padding:1em 0.25em 0.5em 2em;
   margin-bottom:1em;
 }
