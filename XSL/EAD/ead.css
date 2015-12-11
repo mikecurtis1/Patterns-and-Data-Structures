@@ -1,6 +1,7 @@
 body {
     margin:1em;
     font-family: Verdana, sans-serif;
+    line-height:1.75em;
 }
 
 div.ead_header {
@@ -15,4 +16,23 @@ div.archive_description {
     padding:1em;
     border:0.25em solid #cdd;
     background-color:#eff;
+}
+
+div.descgrp, div.did {
+    margin-bottom:1em;
+    padding-bottom:1em;
+    border-bottom: 0.2em solid #8a8;
+}
+
+div.c {
+    border-bottom:solid #88c 0.18em;
+    background-color:rgba(0,0,0,0.07);
+    padding:1em 0 1em 1em;
+}
+
+label {
+    background-color:#fff;
+    border: 0.15em solid #aca;
+    padding-left:0.25em;
+    margin-right:0.25em;
 }
