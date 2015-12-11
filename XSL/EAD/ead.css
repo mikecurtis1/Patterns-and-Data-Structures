@@ -1,0 +1,18 @@
+body {
+    margin:1em;
+    font-family: Verdana, sans-serif;
+}
+
+div.ead_header {
+    margin:1em;
+    padding:1em;
+    border:0.25em solid #ddc;
+    background-color:#ffe;
+}
+
+div.archive_description {
+    margin:1em;
+    padding:1em;
+    border:0.25em solid #cdd;
+    background-color:#eff;
+}
