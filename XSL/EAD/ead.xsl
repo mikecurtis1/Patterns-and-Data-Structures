@@ -11,7 +11,8 @@
 <xsl:template match="ead">
     <html>
         <head>
-            <link rel="stylesheet" type="text/css" href="ead.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" type="text/css" href="ead.css" media="screen"/>
         </head>
         <body>
             <h1>EAD</h1>
