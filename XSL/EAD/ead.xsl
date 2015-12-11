@@ -68,4 +68,37 @@
     </div>
 </xsl:template>
 
+<xsl:template match="*[substring(name(),1,2)='c0']|*[substring(name(),1,2)='c1']">
+    <div class="c">
+    <div><xsl:value-of select="name(.)"/></div>
+    <xsl:apply-templates/>
+    </div>
+</xsl:template>
+
+<xsl:template match="//descgrp">
+    <div class="descgrp">
+        <xsl:apply-templates/>
+    </div>
+</xsl:template>
+
+<xsl:template match="//did">
+    <div class="did">
+        <xsl:apply-templates/>
+    </div>
+</xsl:template>
+
+<xsl:template match="//descgrp/*">
+    <div class="element">
+        <label><xsl:value-of select="name(.)"/>:</label>
+        <xsl:value-of select="."/>
+    </div>
+</xsl:template>
+
+<xsl:template match="//did/*">
+    <div class="element">
+        <label><xsl:value-of select="name(.)"/>:</label>
+        <xsl:value-of select="."/>
+    </div>
+</xsl:template>
+
 </xsl:stylesheet>
