@@ -25,7 +25,7 @@
             This is one of my favorite Shakespeare sonnets. And what better demonstration of a 
             document type definition (DTD) than a sonnet? A sonnet isn't just a poem. A sonnet has a 
             <a href="https://en.wikipedia.org/wiki/Sonnet#English_.28Shakespearean.29_sonnet">well defined structure with formal names</a> for its parts: quatraine, couplet, rhyme scheme etc. I 
-            expressed these formal elements in my <a href="https://github.com/mikecurtis1/democode/blob/gh-pages/DTD/sonnet/sonnet29.dtd">DTD</a>.
+            express these formal elements in my <a href="https://github.com/mikecurtis1/democode/blob/gh-pages/DTD/sonnet/sonnet29.dtd">DTD</a>.
             </blockquote>
           </li>
           <!--
@@ -39,11 +39,11 @@
             <blockquote>
             A film description offers an interesting example for a formal document definition. Not 
             only can a film be described with rich metadata, but that data is often context-specific. 
-            For example: consider dates. A date associated with a film could describe when the film was 
+            Consider dates. A date associated with a film could describe when the film was 
             produced or the setting date. Consider awards. Awards can be give to the film - ex. 
-            National Film Registry - or to indivual cast and crew members - ex. best cinematography. 
+            National Film Registry - or to individual cast and crew members - ex. best cinematography. 
             This document's definition expresses such detail using optional and implied elements. The XLT 
-            transformation is concerned mostly with proper labeling and punctuation of this optional content. 
+            transformation handles proper labeling and punctuation of this optional content. 
             </blockquote>
           </li>
           <li>
@@ -58,11 +58,14 @@
           <li>
             <a href="XSL/top_100/top_100.xml">Broome Community College Top 100 Books 2008</a>
             <blockquote>
-            The XML of this sample is the direct output of a report from Aleph - a popular 
-            library catalog system. Librarians often open these reports in MS Excel and tweak them for presentation. But, in 
-            this case I created an XSL transformation to work directly on the unmodified report and 
-            prepare it for viewing. Ranking the books was accomplished in XSL, because the Aleph report did not have 
-            sort options. Cover images come from the Google Books API based 
+            The XML of this sample is a report from Aleph - a popular 
+            library catalog system. The results contain 355 books with high usage, but the
+            report did not have options for limiting the results to 100 or sorting. Librarians 
+            often open these XML reports in MS Excel 
+            and tweak them for presentation. But, in 
+            this case I created an XSL transformation to perform the sort and limit the 
+            list to 100 items. Cover 
+            images come from the Google Books API based 
             on ISBN's found in the report data.
             </blockquote>
           </li>
@@ -74,6 +77,18 @@
             and is commonly used in digital libraries and archives. METS documents are encoded with a  
             namespace and often include other metadata schemata such as MODS and Dublin Core. This 
             sample simply lists each datum with its element name and any relevant modifier attributes.
+            </blockquote>
+          </li>
+          <li>
+            Mildred Davenport Dance Programs: <a href="XSL/EAD/loc1.ead.xml">transformation 1</a> &amp; <a href="XSL/EAD/loc2.ead.xml">transformation 2</a>
+            <blockquote>
+            Encoded Archival Description (<a href="http://www.loc.gov/ead/index.html">EAD</a>) 
+            is another standard maintained by the Library of Congress used to create inventories 
+            of archival materials. Transformation 1 converts the various EAD elements to simple 
+            HTML divs while maintaining the EAD container nesting. The original EAD element 
+            names are used for CSS class selectors. This is a quick transformation that still 
+            provides some CSS granularity. Tranformation 2 matches some specific EAD elements 
+            like <em>bioghist</em> and <em>head</em> for different styling.             
             </blockquote>
           </li>
         </ul>

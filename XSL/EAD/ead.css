@@ -1,6 +1,6 @@
 body {
     margin:1em;
-    font-family: Verdana, sans-serif;
+    font-family: "Raleway", Verdana, sans-serif;
     line-height:1.75em;
 }
 
@@ -18,10 +18,16 @@ div.archive_description {
     background-color:#eff;
 }
 
-div.descgrp, div.did {
-    margin-bottom:1em;
+div.did {
     padding-bottom:1em;
-    border-bottom: 0.2em solid #8a8;
+    margin-bottom:1em;
+    border-bottom: 0.18em solid #8a8;
+}
+
+div.descgrp {
+    padding-bottom:1em;
+    margin-bottom:1em;
+    border-bottom: 0.18em solid #8a8;
 }
 
 div.c {
@@ -30,9 +36,58 @@ div.c {
     padding:1em 0 1em 1em;
 }
 
+div.c div.did {
+    margin-bottom:0;
+}
+
+div.bioghist {
+    padding:1em 0 1em 1em;
+    margin-bottom:1em;
+    background-color:rgba(0,128,0,0.1);
+    border-bottom:solid #afa 0.18em;
+}
+
+div.bioghist div.element {
+    margin:0 0 1em 0;
+}
+
+div.bioghist div.bioghist {
+    padding:1em 0 0 1em;
+    margin-bottom:0;
+    margin-top:1em;
+}
+
+div.chronitem {
+    background-color:rgba(0,128,0,0.1);
+    margin-bottom:0.5em;
+    padding:0.5em;
+}
+
+div.chronitem div.event {
+    margin-left:1em;
+}
+
+div.controlaccess, div.scopecontent {
+    padding:1em 0 1em 1em;
+    margin-bottom:1em;
+    background-color:rgba(128,0,0,0.1);
+    border-bottom:solid #faa 0.18em;
+}
+
+div.controlaccess div.controlaccess, div.scopecontent div.scopecontent {
+    padding:1em 0 1em 1em;
+    margin-bottom:0;
+    margin-top:1em;
+}
+
+div.controlaccess div.element {
+    margin-bottom:0;
+}
+
 label {
     background-color:#fff;
-    border: 0.15em solid #aca;
+    border: 0.18em solid #aca;
     padding-left:0.25em;
+    padding-right:0.25em;
     margin-right:0.25em;
 }
