@@ -37,7 +37,10 @@
             <xsl:value-of select="name(.)"/>
         </xsl:attribute>
         <!--<xsl:if test="string-length(normalize-space(text()))>0"></xsl:if>-->
-            <label><xsl:value-of select="name(.)"/>:</label>
+            <!-- head,div,lb,p,item -->
+            <xsl:if test="name(.)!='head' and name(.)!='div' and name(.)!='lb' and name(.)!='p' and name(.)!='item'">
+                <label><xsl:value-of select="name(.)"/>:</label>
+            </xsl:if>
             <xsl:if test="count(./*)>0">
                 <div class="toggle">&#9660;</div>
             </xsl:if>
