@@ -181,5 +181,6 @@ div.bottom a, div.bottom a:visited, div.bottom a:hover {
 em.code {
     font-family: monospace;
     font-size: 1em;
-    background-color:#886;
+    background-color: #886;
+    font-style: normal;
 }
