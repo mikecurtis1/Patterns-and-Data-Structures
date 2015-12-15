@@ -23,7 +23,7 @@
         </head>
         <body>
             <h1><xsl:value-of select="//titlestmt/titleproper"/></h1>
-            <div class="abstract">
+            <div class="ead_description">
                 <xsl:value-of select="//archdesc/did/abstract"/>
             </div>
             <xsl:apply-templates/>
