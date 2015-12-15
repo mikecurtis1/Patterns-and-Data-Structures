@@ -177,3 +177,9 @@ img.stackoverflow {
 div.bottom a, div.bottom a:visited, div.bottom a:hover {
     color:#aaa;
 }
+
+em.code {
+    font-family: monospace;
+    font-size: 1em;
+    background-color:#886;
+}
