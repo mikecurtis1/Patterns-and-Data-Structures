@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
     $('.toggle').nextAll().toggle();
     $('.toggle').click(function () {     
         $(this).nextAll().toggle("slow");
