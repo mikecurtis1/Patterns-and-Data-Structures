@@ -73,20 +73,34 @@ class Node
      * @param string $path a slash delimited path of node names
      * @param Node|Member|null $arg the final node added at the end of the node path
      */
+    //TODO: simplify this method!
     public function insertByPath(&$curr_node, $path='', $arg=null)
     {
         if (is_string($path) && $this->insertable($arg)) {
             $p = explode('/', $path);
             $n = array_shift($p);
+            if ($curr_node instanceof Node) {
+                $curr_name = $curr_node->getName();
+            }
+            if ($curr_name === $n) {
+                if (isset($p[0])) {
+                    $n = $p[0];
+                }
+                if ($next_node = $curr_node->getNode($n)) {
+                    $next_node = $next_node;
+                } else {
+                    $next_node = $curr_node;
+                }
+                
+            } else {
+                $new_node = self::build($n);
+                $curr_node->insert($new_node);
+                $next_node = $new_node;
+            }
             if ($n !== '') {
                 $remaining_path = implode('/', $p);
-                $new_node = self::build($n);
-                if (count($p) === 0 && $arg !== null) {
-                    $new_node->insert($arg);
-                }
-                $curr_node->insert($new_node);
                 while (count($p) > 0) {
-                    return $this->insertByPath($new_node, $remaining_path, $arg);
+                    return $this->insertByPath($next_node, $remaining_path, $arg);
                 }
             }
         }
