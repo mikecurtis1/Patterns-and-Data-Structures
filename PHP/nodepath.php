@@ -49,7 +49,7 @@ class Node
      * 
      * @param Node $curr_node
      * @param string $path a slash delimited path of node names
-     * @param Node|Member|null $arg the final node added at the end of the node path
+     * @param array $array optional data array added to last node in the path
      */
     public function insertByPath(&$curr_node, $path='', $array=null)
     {
