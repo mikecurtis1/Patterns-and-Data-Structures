@@ -1,40 +1,11 @@
 <?php 
 
-class Member
-{
-    private $name = '';
-    private $value = '';
-    
-    private function __construct($name, $value)
-    {
-        $this->name = $name;
-        $this->value = $value;
-    }
-    
-    public static function build($name='', $value='')
-    {
-        if (is_string($name) && is_string($value)) {
-            return new Member($name, $value);
-        } else {
-            return false;
-        }
-    }
-    
-    public function getName()
-    {
-        return $this->name;
-    }
-    
-    public function getValue()
-    {
-        return $this->value;
-    }
-}
-
 class Node
 {
     private $name = '';
-    private $arr = array();
+    private $data = array();
+    private $children = array();
+    
     
     private function __construct($name)
     {
@@ -50,16 +21,23 @@ class Node
         }
     }
     
+    public function setData($arg)
+    {
+        if (is_array($arg)) {
+            $this->data = $arg;
+        }
+    }
+    
     private function insert($arg)
     {
         if ($this->insertable($arg) && $this->nodeIsSet($arg) === false) {
-            $this->arr[] = $arg;
+            $this->children[] = $arg;
         }
     }
     
     private function insertable($arg)
     {
-        if ($arg instanceof Node || $arg instanceof Member || $arg === null) {
+        if ($arg instanceof Node) {
             return true;
         } else {
             return false;
@@ -73,10 +51,9 @@ class Node
      * @param string $path a slash delimited path of node names
      * @param Node|Member|null $arg the final node added at the end of the node path
      */
-    //TODO: simplify this method!
-    public function insertByPath(&$curr_node, $path='', $arg=null)
+    public function insertByPath(&$curr_node, $path='', $array=null)
     {
-        if (is_string($path) && $this->insertable($arg)) {
+        if (is_string($path)) {
             $p = explode('/', $path);
             $n = array_shift($p);
             if ($curr_node instanceof Node) {
@@ -94,13 +71,14 @@ class Node
                 
             } else {
                 $new_node = self::build($n);
+                $new_node->setData($array);
                 $curr_node->insert($new_node);
                 $next_node = $new_node;
             }
             if ($n !== '') {
                 $remaining_path = implode('/', $p);
                 while (count($p) > 0) {
-                    return $this->insertByPath($next_node, $remaining_path, $arg);
+                    return $this->insertByPath($next_node, $remaining_path, $array);
                 }
             }
         }
@@ -108,7 +86,7 @@ class Node
     
     private function nodeIsSet($arg)
     {
-        foreach ($this->arr as $n) {
+        foreach ($this->children as $n) {
             if ($this->insertable($arg) && $n->getName() === $arg->getName()) {
                 return true;
                 break;
@@ -120,75 +98,149 @@ class Node
     
     public function getNode($name='')
     {
-        foreach ($this->arr as $n) {
-            if ($n instanceof Node && $n->getName() === $name) {
+        foreach ($this->children as $n) {
+            if ($n->getName() === $name) {
                 return $n;
                 break;
             }
         }
+        
+        return false;
     }
     
-    public function getArray()
+    public function getChildren()
     {
-        return $this->arr;
+        return $this->children;
     }
     
     public function getName()
     {
         return $this->name;
     }
+    
+    public function getData()
+    {
+        return $this->data;
+    }
+    
+    public function nestXML($obj=null, $depth = 1, &$markup) {
+        if ($obj === null) {
+            $obj = $this;
+        }
+        $array = $obj->getChildren();
+        $indent_chr = "\t";
+        $indent_str = str_repeat($indent_chr, $depth);
+        foreach ($array as $key => $val) {
+            $c=1;
+            $node_data = $val->getData();
+            $markup .= $indent_str . '<nodeSet level="' . $depth . '">' . "\n";
+            $markup .= $indent_chr . $indent_str . '<node ord="' . $c . '">' . "\n";
+            $markup .= $indent_chr . $indent_chr . $indent_str . '<name>' . htmlspecialchars($val->getName()) . '</name>' . "\n";
+            if (! empty($val->getData())) {
+                $markup .= $indent_chr . $indent_chr . $indent_str . '<data>' . "\n";
+                foreach ($val->getData() as $key => $value) {
+                    $markup .= $indent_chr . $indent_chr . $indent_chr . $indent_str . '<' . htmlspecialchars($key) . '>' . htmlspecialchars($value) . '</' . htmlspecialchars($key) . '>' . "\n";
+                }
+                $markup .= $indent_chr . $indent_chr . $indent_str . '</data>' . "\n";
+            }
+            $markup .= $indent_chr . $indent_str . '</node>' . "\n";
+            if (is_array($val->getChildren())) {
+                $this->nestXML($val, ($depth+1), $markup);
+                $markup .= $indent_str . '</nodeSet>' . "\n";
+            }
+            $c++;
+        }
+        
+        return;
+    }
+    
+    public function nestDiv($obj=null, $depth = 1, &$markup) {
+        if ($obj === null) {
+            $obj = $this;
+        }
+        $array = $obj->getChildren();
+        $indent_chr = "\t";
+        $indent_str = str_repeat($indent_chr, $depth-1);
+        foreach ($array as $key => $val) {
+            $c=1;
+            $markup .= $indent_str . '<div class="nodeSet level_' . $depth . '">' . "\n";
+            $node_name = $val->getName();
+            $node_data = $val->getData();
+            $markup .= $indent_chr . $indent_str . '<div class="node node_' . $c . '">' . "\n";
+            $markup .= $indent_chr . $indent_chr . $indent_str . '<div class="name">' . htmlspecialchars($node_name) . '</div>' . "\n";
+            if (! empty($val->getData())) {
+                $markup .= $indent_chr . $indent_chr . $indent_str . '<div class="data">' . "\n";
+                foreach ($val->getData() as $key => $value) {
+                    $markup .= $indent_chr . $indent_chr . $indent_chr . $indent_str . '<div class="datum ' . htmlspecialchars($key) . '">' . htmlspecialchars($value) . '</div>' . "\n";
+                }
+                $markup .= $indent_chr . $indent_chr . $indent_str . '</div>' . "\n";
+            }
+            $markup .= $indent_chr . $indent_str . '</div>' . "\n";
+            if (is_array($val->getChildren())) {
+                $c=1;
+                $this->nestDiv($val, ($depth+1), $markup);
+                $markup .= $indent_str . '</div>' . "\n";
+            }
+            $c++;
+        }
+        return;
+    }
+    
+    public function nestList($obj=null, $depth = 1, &$markup) {
+        if ($obj === null) {
+            $obj = $this;
+        }
+        $array = $obj->getChildren();
+        if (! empty($array)) {
+            $indent_chr = "\t";
+            $indent_str = str_repeat($indent_chr, $depth-1);
+            $markup .= $indent_str . '<ol class="level_' . $depth . '">' . "\n";
+            foreach ($array as $key => $val) {
+                $markup .= $indent_chr . $indent_str . '<li>' . "\n";
+                $markup .= $indent_chr . $indent_str . '<span class="name">' . trim($val->getName()) . '</span>' . "\n";
+                if (! empty($val->getData())) {
+                    $markup .= $indent_chr . $indent_str . '<ol class="data">' . "\n";
+                    foreach ($val->getData() as $key => $value) {
+                        $markup .= $indent_chr . $indent_chr . $indent_str . '<li>' . "\n";
+                        $markup .= $indent_chr . $indent_chr . $indent_str . '<span class="datum ' . $key . '">' . $value . '</span>' . "\n";
+                        $markup .= $indent_chr . $indent_chr . $indent_str . '</li>' . "\n";
+                    }
+                    $markup .= $indent_chr . $indent_str . '</ol>' . "\n";
+                }
+                if (is_array($val->getChildren())) {
+                    $this->nestList($val, ($depth+1), $markup);
+                }
+                $markup .= $indent_chr . $indent_str . '</li>' . "\n";
+            }
+            $markup .= $indent_str . '</ol>' . "\n";
+        }
+        return;
+    }
 }
 ?>
-<pre>
 <?php 
 
-//NOTE: https://en.wikipedia.org/wiki/Node_%28computer_science%29
+$nodeTree = Node::build('root');
+$nodeTree->setData(array('123'=>'abc'));
+$nodeTree->insertByPath($nodeTree, 'root/A');
+$nodeTree->insertByPath($nodeTree, 'root/B');
+$nodeTree->insertByPath($nodeTree, 'root/B/C');
+$nodeTree->insertByPath($nodeTree, 'root/B/D', array('foo'=>'a','bar'=>'b','baz'=>'c'));
+$nodeTree->insertByPath($nodeTree, 'root/B');
+$nodeTree->insertByPath($nodeTree, 'root/D/F/G/H/I');
+#echo var_dump($nodeTree);
 
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// create root node
-$z = Node::build('Z');
-echo var_dump($z);
+#$markup = '';
+#$markup .= '<!DOCTYPE html>' . "\n";
+##$nodeTree->nestDiv(null, 1, $markup);
+#$nodeTree->nestList(null, 1, $markup);
 
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// add a child to root
-$z->insertByPath($z, 'A');
-echo var_dump($z);
+$markup = '';
+$markup .= '<?xml version="1.0" encoding="UTF-8" ?>' . "\n";
+$markup .= '<nodePath>' . "\n";
+$nodeTree->nestXML(null, 1, $markup);
+$markup .= '</nodePath>';
+header('Content-Type: text/xml; charset=utf-8'); 
+echo $markup;
 
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// another child added... 
-$z->insertByPath($z, 'B');
-// ...but, will not insert node with duplicate name
-$z->insertByPath($z, 'B');
-echo var_dump($z);
-
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// insert a node at end of path
-$z->insertByPath($z, 'C', Node::build('D'));
-// syntactically the same a above...
-// ...but, insert fails because of duplicate path
-$z->insertByPath($z, 'C/D');
-echo var_dump($z);
-
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// insert a deep node path
-$z->insertByPath($z, 'E/F/G/H/I');
-echo var_dump($z);
-
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// child nodes (F/G/H/I) here and above can be duplicated, 
-// because siblings (E,D) are different nodes 
-// the two resulting paths are unique
-$z->insertByPath($z, 'D/F/G/H/I');
-echo var_dump($z);
-
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// insert a Member at end of path
-$z->insertByPath($z, 'K/L', Member::build('j', 'bar'));
-echo var_dump($z);
-
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' . "\n";
-// will not insert non-insertable
-$z->insertByPath($z, 'M/N', 1);
-echo var_dump($z);
 ?>
-</pre>
